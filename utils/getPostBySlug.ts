@@ -2,8 +2,9 @@ import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 
+const removeDateAndExtension = (str) => str.replace(/\.md$/, '').replace(/^\d{4}-\d{2}-\d{2}_/, '');
+
 const getPostBySlug = (slug, directory) => {
-  const removeDateAndExtension = (str) => str.replace(/\.md$/, '').replace(/^\d{4}-\d{2}-\d{2}_/, '');
   let posts;
 
   try {
@@ -12,15 +13,15 @@ const getPostBySlug = (slug, directory) => {
     throw new Error('Diretório inválido');
   }
 
-  const normalizedPostsList = [];
+  const slugs = [];
 
-  posts.map((post) => normalizedPostsList.push(removeDateAndExtension(post)));
+  posts.map((post) => slugs.push(removeDateAndExtension(post)));
 
-  const postID = normalizedPostsList.findIndex((item) => item === slug);
+  const postIndex = slugs.findIndex((item) => item === slug);
 
-  if (postID === -1) throw new Error('Post não encontrado');
+  if (postIndex === -1) throw new Error('Post não encontrado');
 
-  const postPath = fs.readFileSync(join(directory, posts[postID]), 'utf8');
+  const postPath = fs.readFileSync(join(directory, posts[postIndex]), 'utf8');
   const { data } = matter(postPath);
 
   return data;
