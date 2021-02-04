@@ -1,13 +1,11 @@
 ---
-title: Hello World
-description: Meu primeiro post do meu blog feito em Next
+title: Post de hoje
+description: Ok
 tags:
 - react
 - next.js
 - javascript
 ---
-
-# Hello World
 
 [Lorem ipsum dolor sit amet](https://google.com), consectetur adipiscing elit. Nunc vitae fringilla augue. Vivamus in lacus quis nibh commodo consequat ac sit amet magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis tincidunt odio sed massa lacinia, ut egestas nisi placerat. Aenean a volutpat enim, non interdum ligula. Sed eget lectus et libero luctus tincidunt interdum vitae eros. Vestibulum eleifend purus sit amet ex dapibus scelerisque.
 
