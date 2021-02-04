@@ -1,8 +1,6 @@
-import 'normalize.css'
-import '../styles/global.css'
+import 'normalize.css';
+import '../styles/global.css';
 
-const App = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />
-}
+const App = ({ Component, pageProps }) => <Component {...pageProps} />;
 
 export default App;
