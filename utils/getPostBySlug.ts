@@ -1,8 +1,7 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
-
-const removeDateAndExtension = (str) => str.replace(/\.md$/, '').replace(/^\d{4}-\d{2}-\d{2}_/, '');
+import removeDateAndExtension from './removeDateAndExtension';
 
 const getPostBySlug = (slug, directory) => {
   let posts;
@@ -22,9 +21,9 @@ const getPostBySlug = (slug, directory) => {
   if (postIndex === -1) throw new Error('Post não encontrado');
 
   const postPath = fs.readFileSync(join(directory, posts[postIndex]), 'utf8');
-  const { data } = matter(postPath);
+  const { data, content } = matter(postPath);
 
-  return data;
+  return { data, content };
 };
 
 export default getPostBySlug;
