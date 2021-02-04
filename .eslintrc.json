@@ -23,7 +23,8 @@
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "react/jsx-filename-extension": "off"
   },
   "settings": {
     "import/resolver": {
