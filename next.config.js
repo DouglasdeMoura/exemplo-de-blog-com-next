@@ -1,7 +1,5 @@
-const config = {
+module.exports = {
   env: {
     POST_DIRECTORIES: '_posts',
   },
 };
-
-export default config;
